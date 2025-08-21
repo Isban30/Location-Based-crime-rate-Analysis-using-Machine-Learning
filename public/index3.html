@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Age Group Analysis</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Raleway:300,400,500,600,700|Poppins:300,400,500,600,700" rel="stylesheet" />
+
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet" />
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+  <!-- Main CSS -->
+  <link href="../assets/css/style.css" rel="stylesheet" />
+
+  <!-- Map Styling -->
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+    .crime-dropdown {
+      padding: 10px;
+      text-align: center;
+    }
+    .crime-dropdown select {
+      padding: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo">
+        <!-- <a href="../index.html"><img src="assets/img/logo.png" alt="Logo" class="img-fluid" /></a> -->
+      </h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Crime Analysis</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li class="dropdown">
+                <a href="#"><span>Map Analysis</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="index1.html">Crime-Type Analysis</a></li>
+                  <li><a href="#">Age Based Analysis</a></li>
+                </ul>
+              </li>
+              <li><a href="../plots/plot2.html">Graphical Analysis</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link" href="../backend/templates/input.html">Prediction Model</a></li>
+          <!-- <li><a class="nav-link" href="https://cid-criminal-prediction.streamlit.app/" target="_blank">Criminal Prediction</a></li> -->
+          <li><a class="nav-link" href="https://huggingface.co/spaces/Mayureshd/senti3" target="_blank">Sentiment Analysis</a></li>
+          <li><a class="nav-link" href="https://cid-resource-allocation.streamlit.app/" target="_blank">Resource Allocation</a></li>
+          <li class="dropdown">
+            <a href="#"><span>Age Group</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Elderly</a></li>
+              <li><a href="index5.html">Women</a></li>
+              <li><a href="index4.html">Children</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======= Map Section ======= -->
+  <div id="map"></div>
+  <div class="crime-dropdown">
+    <select id="crime-select">
+      <option value="All">All Crimes</option>
+      <option value="MURDER">MURDER</option>
+      <option value="THEFT">THEFT</option>
+      <option value="BURGLARY - NIGHT">BURGLARY - NIGHT</option>
+    </select>
+  </div>
+
+  <!-- ======= Scripts ======= -->
+  <script src="../assets/js/elderly.js"></script>
+
+  <!-- Google Maps API -->
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key={YOUR_API_KEY}&libraries=visualization&callback=initMap&v=weekly"
+    defer></script>
+
+  <!-- Classic MarkerClusterer (global version) -->
+<script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+</body>
+</html>
